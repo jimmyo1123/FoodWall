@@ -45,7 +45,7 @@ html {
     margin: -41.425px 0 -42.425px 0; /*top right bottom left*/
 }
 
-/*POP UP MODEL*/
+/*POP UP CONTAINER*/
 
 .pop-up-container {
     display: none;
@@ -81,6 +81,21 @@ html {
     height: 150px;
     font-size: 15px;
     font-weight: 400;
+}
+
+/*Anamation*/
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.container-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }
 
 /*close button*/
