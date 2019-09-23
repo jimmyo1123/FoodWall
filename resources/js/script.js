@@ -23,5 +23,3 @@ var span = document.getElementsByClassName('close')[0];
 span.onclick = function() {
     popupContainer.style.display = 'none';
 }
-
-/* Detecct img is horizontal one */
