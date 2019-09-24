@@ -1,4 +1,7 @@
+/*-----------------*/
 /* Basic Setup*/
+/*-----------------*/
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +23,9 @@ html {
     margin: 0 auto; /*top/btm left/right*/
 }
 
+/*-----------------*/
 /* GALLERY */
+/*-----------------*/
 
 /*ul*/
 .gallery-container {
@@ -57,7 +62,9 @@ html {
     opacity: 1;
 }
 
+/*-----------------*/
 /*POP UP CONTAINER*/
+/*-----------------*/
 
 .pop-up-container {
     display: none;
@@ -128,12 +135,44 @@ html {
     cursor: pointer;
 }
 
+/*-----------------*/
+/* FOOTER */
+/*-----------------*/
 
+footer {
+    margin-top: 30px;
+    background-color: #676666;
+}
 
+.footer-nav {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ccc;
+}
 
+.social-links {
+    list-style: none;
+    font-size: 20px;
+    float: right;
+}
 
+.social-links li {
+    display: inline-block;
+    color: #ff0000;
+}
 
+.social-links a:link,
+.social-links a:visited {
+    color: #ccc;
+    text-decoration: none;
+    
+}
 
+.social-links a:hover,
+.social-links a:active {
+    color: #fff;
+    text-decoration: none;
+}
 
 
 
