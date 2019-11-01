@@ -8,43 +8,128 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     background-color: #fff;
     color: #555;
     font-family: 'Josefin Slab', 'Arial', sans-serif;
+    font-size: 20px;
     font-weight: 300;
-    font-size: 12px;
     text-rendering: optimizeLegibility;
 }
 
 .row {
     max-width: 1140px;
-    padding: 0 6px;
-    margin: 0 auto; /*top/btm left/right*/
+    margin: 0 auto;
+}
+
+/*-----------------*/
+/* Header */
+/*-----------------*/
+
+.siteName {
+    text-align: center;
+    font-size: 200%;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.menu {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.menu li a:link,
+.menu li a:visited {
+    padding: 3px 0;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.menu li a:hover,
+.menu li a:active {
+    border-bottom: 2px solid #4476ff;
+}
+
+hr {
+    display: block;
+    border: 0;
+    border-top: 3px solid #ccc;
+}
+
+/*-----------------*/
+/* Sticky Nav */
+/*-----------------*/
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 9999; /*vertical stacking*/
+}
+
+.sticky .menu {
+    margin-top: 18px;
+    float: right;
+}
+
+.sticky .menu li a:link,
+.sticky .menu li a:visited {
+    padding: 3px 0;
+    color: #555;
+}
+
+.sticky .siteName {
+    float: left;
+    font-size: 150%;
+    font-weight: 400;
+    margin: 15px 0 5px 55px;
 }
 
 /*-----------------*/
 /* GALLERY */
 /*-----------------*/
 
+.gallery {
+    padding-top: 65px;
+}
+
+.month {
+    width: 62%;
+    border-top: 3px dashed #ccc;
+    border-bottom: 3px dashed #ccc;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 0; 
+}
+
 /*ul*/
+
 .gallery-container {
     list-style: none;
-    align-content: center;
-    width: 1140px;
+    justify-content: center;
     height: 228px;
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     overflow: hidden;
 }
 
 /*li*/
 .photos {
     width: 20%;
-    display: block;
-    float: left;
     overflow: hidden;
-    margin: 2px 2px;
+    margin: 5px;
     background-color: #000;
 }
 
@@ -149,17 +234,14 @@ footer {
     font-weight: 400;
     color: #ccc;
     float: left;
+    padding-left: 20px;
 }
 
 .social-links {
     list-style: none;
     font-size: 20px;
     float: right;
-}
-
-.social-links li {
-    display: inline-block;
-    color: #ff0000;
+    padding-right: 20px;
 }
 
 .social-links a:link,
