@@ -235,7 +235,7 @@ footer {
 }
 
 .footer-nav {
-    font-size: 18px;
+    font-size: 90%;
     font-weight: 400;
     color: #ccc;
     float: left;
@@ -244,7 +244,6 @@ footer {
 
 .social-links {
     list-style: none;
-    font-size: 20px;
     float: right;
     padding-right: 20px;
 }

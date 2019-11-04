@@ -1,22 +1,93 @@
 /* Big tablets to 1200px (width smaller than the 1140px row)*/
-@media only screen and (max-width: 1200px) {
-    
-}
+@media only screen and (max-width: 1200px) {}
 
 
 /* Small tablets to big tablets: from 768 to 1023px */
 @media only screen and (max-width: 1023px) {
-    
+    .siteName {
+        font-size: 180%;
+        margin: 15px 0;
+    }
+
+    .menu {
+        font-size: 80%;
+    }
+
+    .gallery {
+        padding-top: 60px;
+    }
+
+    .month {
+        font-size: 80%;
+    }
 }
 
 
 /* Small phones to small tablets: from 481 to 767px */
 @media only screen and (max-width: 767px) {
-    
+    .siteName {
+        font-size: 160%;
+        margin: 10px 0;
+    }
+
+    .menu {
+        font-size: 60%;
+    }
+
+    .gallery {
+        padding-top: 50px;
+    }
+
+    .month {
+        width: 63%;
+        font-size: 60%;
+    }
+
+    .footer-nav {
+        font-size: 60%;
+        padding-top: 5px;
+        padding-left: 30px;
+    }
 }
 
 
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
-    
+    .siteName {
+        font-size: 130%;
+        margin: 10px 0;
+    }
+
+    .menu {
+        font-size: 50%;
+    }
+
+    .gallery {
+        padding-top: 20px;
+    }
+
+    .month {
+        width: 66%;
+        font-size: 50%;
+    }
+
+    .footer {
+        margin-top: 20px;
+    }
+
+    .footer-nav {
+        font-size: 50%;
+        padding-top: 0px;
+        padding-left: 20px;
+    }
+
+    .social-links {
+        font-size: 70%;
+        padding-right: 20px;
+    }
+
+    .span-1-of-2 {
+        padding: 10px 0;
+        width: 49.2%;
+    }
 }
