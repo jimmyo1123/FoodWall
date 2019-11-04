@@ -1,23 +1,31 @@
 $(document).ready(function () {
 
     /*For the sticky*/
+    
 
-    var originHeight;
+    var originHeight = $('header').height();
+    var stickyHeaderHeight;
+    if ($('.mobile-menu').css("display") == "none") {
+        stickyHeaderHeight = 57.5;
+    } else {
+        stickyHeaderHeight = 111;
+    }
 
     $('.js--startStick').waypoint(function (direction) {
+        /* Check if mobile menu exists */
         if ($('.mobile-menu').css("display") != 'none') {
             originHeight = parseFloat($('nav').height());
         } else {
             originHeight = (parseFloat($('nav').height()) + parseFloat($('.siteName').css("margin-top")));
         }
-        console.log("original height: " + originHeight);
-        console.log("waypoint trigger at: " + this.triggerPoint);
 
         if (direction == "down") {
             $('nav').addClass('sticky');
+            stickyHeaderHeight = parseFloat($('nav').height());
             $('body').css("padding-top", originHeight);
         } else {
             $('nav').removeClass('sticky');
+            stickyHeaderHeight = parseFloat($('nav').height());
             $('body').css("padding-top", 0);
         }
     });
@@ -43,7 +51,7 @@ $(document).ready(function () {
                     // Only prevent default if animation is actually gonna happen
                     event.preventDefault();
                     $('html, body').animate({
-                        scrollTop: target.offset().top - stickyHeight
+                        scrollTop: target.offset().top - stickyHeaderHeight
                     }, 1000, function () {
                         // Callback after animation
                         // Must change focus!
@@ -61,11 +69,13 @@ $(document).ready(function () {
         });
 
     /* Mobile menu */
+    var nav = $('.js--menu');
+    var icon = $('.js--mobile-menu-icon i');
     $('.js--mobile-menu-icon').click(function () {
-        var nav = $('.js--menu');
-        var icon = $('.js--mobile-menu-icon i');
-        nav.slideToggle(200, function(){
-            Waypoint.refreshAll();
+
+
+        nav.slideToggle(200, function () {
+            /* Waypoint.refreshAll(); */
         });
 
         if (icon.hasClass('ion-navicon-round')) {
@@ -74,6 +84,24 @@ $(document).ready(function () {
         } else {
             icon.addClass('ion-navicon-round');
             icon.removeClass('ion-close-round');
+        }
+    });
+
+    /* scroll will automatically close mobile menu when it is open */
+
+    $(window).scroll(function () {
+
+        var lastScrollTop = 0;
+        if (icon.hasClass('ion-close-round')) {
+
+            var nowScrollTop = $(this).scrollTop();
+
+            if (nowScrollTop > lastScrollTop) {
+                nav.slideUp(200);
+                icon.addClass('ion-navicon-round');
+                icon.removeClass('ion-close-round');
+            }
+            lastScrollTop = nowScrollTop;
         }
     });
 
