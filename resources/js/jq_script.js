@@ -17,7 +17,7 @@ $('.js--startStick').waypoint(function (direction) {
     }
 });
 
-/*Navi scroll*/
+/* Navi scroll (smooth scrolling) */
 
 // Select all links with hashes
 $('a[href*="#"]')
@@ -54,10 +54,9 @@ $('a[href*="#"]')
             }
         }
     });
-/*
-$('.scroll-to-August').click(function() {
-   $('html, body').animate({scrollTop: $('.js--scroll-to-August').offset().top}, 1000);
-*/
 
+/* For the image height */
+    
+    
 
 });
