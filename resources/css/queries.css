@@ -26,13 +26,63 @@
 /* Small phones to small tablets: from 481 to 767px */
 @media only screen and (max-width: 767px) {
     .siteName {
-        font-size: 160%;
         margin: 10px 0;
+        float: left;
+        font-size: 150%;
+        font-weight: 400;
+        margin: 15px 0 5px 55px;
     }
 
     .menu {
-        font-size: 60%;
+        display: none;
+        float: left;
+        text-align: left;
+        margin-top: 15px;
     }
+
+    .menu li {
+        display: block;
+        margin: 0 25px;
+    }
+
+    .menu li a:link,
+    .menu li a:visited {
+        display: block;
+        border: 0;
+    }
+
+    .mobile-menu {
+        display: inline-block;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.97);
+        z-index: 9999;
+        /*vertical stacking*/
+    }
+
+    .sticky .menu {
+        margin-top: 15px;
+        float: left;
+        font-size: 70%;
+        padding-bottom: 5px;
+    }
+
+    .sticky .menu li a:link,
+    .sticky .menu li a:visited {
+    }
+
+    .sticky .siteName {
+        font-size: 100%;
+    }
+
+    .sticky .mobile-menu {
+        margin-top: 10px;
+    }
+
 
     .gallery {
         padding-top: 50px;
@@ -55,7 +105,7 @@
 @media only screen and (max-width: 480px) {
     .siteName {
         font-size: 130%;
-        margin: 10px 0;
+        margin: 10px 0 10px 20px;
     }
 
     .menu {
@@ -76,7 +126,7 @@
     }
 
     .footer-nav {
-        font-size: 50%;
+        font-size: 60%;
         padding-top: 0px;
         padding-left: 20px;
     }

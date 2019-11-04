@@ -60,6 +60,15 @@ body {
     border-bottom: 2px solid #4476ff;
 }
 
+.mobile-menu {
+    display: none;
+    float: right;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 15px;
+    font-size: 25px;
+}
+
 hr {
     display: block;
     border: 0;
