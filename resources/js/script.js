@@ -45,17 +45,17 @@ if (performance.navigation.type === 1) {
     var cafeRandomOrder = randomOrder(cafePhoto.length);
     var diningRandomOrder = randomOrder(diningPhoto.length);
     var dessertRandomOrder = randomOrder(dessertPhoto.length);
-    var i,j,k = 0;
+    var i = 0, j = 0, k = 0;
     while(i < cafePhoto.length){
-        cafePhoto[i].src = 'resources/img/Cafe/cafe-' + cafeRandomOrder[i] +'.JPG';
+        cafePhoto[i].src = 'resources/img/Cafe/cafe-' + cafeRandomOrder[i] +'.jpg';
         i++;
     }
     while(j < diningPhoto.length){
-        diningPhoto[j].src = 'resources/img/CasualDining/dining-' + diningRandomOrder[j] +'.JPG';
+        diningPhoto[j].src = 'resources/img/CasualDining/dining-' + diningRandomOrder[j] +'.jpg';
         j++;
     }
     while(k < dessertPhoto.length){
-        dessertPhoto[k].src = 'resources/img/dessertDrink/dessert-' + dessertRandomOrder[k] +'.JPG';
+        dessertPhoto[k].src = 'resources/img/dessertDrink/dessert-' + dessertRandomOrder[k] +'.jpg';
         k++;
     }
 }
