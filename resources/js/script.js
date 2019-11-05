@@ -1,4 +1,7 @@
-/* POP UP */
+/********************
+*******POP UP********
+********************/
+
 var popupContainer = document.getElementById('popUpContainer');
 
 const photoNodeList = document.getElementsByClassName('img-to-click');
@@ -15,9 +18,6 @@ var captionText = document.getElementById('caption');
 function clicked_show(clicked) { /*detect the click*/
     popupContainer.style.display = 'block';
     popUpImg.src = this.src;
-    console.log("test: " + this.src);
-    captionText.innerHTML = this.alt;
-    console.log("test: " + this.alt);
 }
 
 //get span element
@@ -28,16 +28,35 @@ span.onclick = function() {
     popupContainer.style.display = 'none';
 }
 
-/* RANDOM PHOTO ORDER */
+
+/********************************
+*******RANDOM PHOTO ORDER********
+********************************/
 
 //changing photos order
+const cafeNodeList = document.querySelectorAll('.cafe-gallery .img-to-click');
+const cafePhoto = Array.from(cafeNodeList);
+const diningNodeList = document.querySelectorAll('.dining-gallery .img-to-click');
+const diningPhoto = Array.from(diningNodeList);
+const dessertNodeList = document.querySelectorAll('.dessert-gallery .img-to-click');
+const dessertPhoto = Array.from(dessertNodeList);
+
 if (performance.navigation.type === 1) {
-    var randomOrder = randomOrder(photoArr.length);
-    var i = 0;
-    while(i < photoArr.length){
-        photoArr[i].removeAttribute('alt');
-        photoArr[i].src = 'resources/img/food-' + randomOrder[i] +'.JPG';
+    var cafeRandomOrder = randomOrder(cafePhoto.length);
+    var diningRandomOrder = randomOrder(diningPhoto.length);
+    var dessertRandomOrder = randomOrder(dessertPhoto.length);
+    var i,j,k = 0;
+    while(i < cafePhoto.length){
+        cafePhoto[i].src = 'resources/img/Cafe/cafe-' + cafeRandomOrder[i] +'.JPG';
         i++;
+    }
+    while(j < diningPhoto.length){
+        diningPhoto[j].src = 'resources/img/CasualDining/dining-' + diningRandomOrder[j] +'.JPG';
+        j++;
+    }
+    while(k < dessertPhoto.length){
+        dessertPhoto[k].src = 'resources/img/dessertDrink/dessert-' + dessertRandomOrder[k] +'.JPG';
+        k++;
     }
 }
 
