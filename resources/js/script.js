@@ -1,3 +1,58 @@
+/********************************
+**********INSERT PHOTOS**********
+********************************/
+
+const cafe = "Cafe/cafe-";
+const dining = "CasualDining/dining-";
+const dessert = "dessertDrink/dessert-";
+const cafeNumber = 15;
+const diningNumber = 39;
+const dessertNumber = 9;
+var PhotosInserted = false;
+
+function renderPhotos(type) {
+    let text = '';
+    let index = 0;
+    let queryText = '';
+    if (type === 'cafe') {
+        text = cafe;
+        index = parseInt(cafeNumber);
+        queryText = '.cafe-gallery';
+    } else if ( type === 'dining') {
+        text = dining;
+        index = parseInt(diningNumber);
+        queryText = '.dining-gallery';
+    } else if (type === 'dessert') {
+        text = dessert;
+        index = parseInt(dessertNumber);
+        queryText = '.dessert-gallery';
+    }
+
+    for (var i = 1; i <= index - 2; i += 3) {
+        const markup = `
+        <ul class="gallery-container">
+
+            <li class="photos">
+                <img class="img-to-click" src="resources/img/${text}${i}.jpg">
+            </li>
+            <li class="photos">
+                <img class="img-to-click" src="resources/img/${text}${i+1}.jpg">
+            </li>
+            <li class="photos">
+                <img class="img-to-click" src="resources/img/${text}${i+2}.jpg">
+            </li>
+        </ul>
+        `;
+        document.querySelector(queryText).insertAdjacentHTML('beforeend', markup);
+    }
+}
+if(!PhotosInserted){
+    renderPhotos('cafe');
+    renderPhotos('dining');
+    renderPhotos('dessert');
+}
+
+
 /********************
 *******POP UP********
 ********************/
@@ -78,7 +133,6 @@ function getNumArray(length){
     }
     return nums;
 }
-
 
 
 
